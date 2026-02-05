@@ -18,7 +18,7 @@ pipeline {
             steps {
                 sh '''
                   terraform --version
-                  terraform init -input=false
+                  terraform init 
                 '''
             }
         }
