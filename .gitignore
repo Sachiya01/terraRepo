@@ -1,0 +1,17 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfvars
+.terraform.lock.hcl
+
+# Provider binaries
+terraform-provider-*
+
+# OS / Editor
+.DS_Store
+.vscode/
+.idea/
+
+# Jenkins
+jenkins.log
