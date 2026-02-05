@@ -229,3 +229,28 @@ resource "aws_instance" "sachith_tf_pvt_instance" {
     }
   }
 }
+
+#Create test EC2 Instance
+resource "aws_instance" "sachith_tf_test_instance" {
+  ami                    = var.ami
+  instance_type          = var.pub_instance_type
+  subnet_id              = aws_subnet.sachith_tf_pub_sub.id
+  key_name               = "tf_sachith"
+  vpc_security_group_ids = [aws_security_group.sachith_tf_pub_sg.id]
+
+  tags = {
+    Name     = "sachith_tf_test_instance"
+    Duration = "Temporary"
+    User     = "Sachith"
+  }
+
+  root_block_device {
+    volume_type = "gp3"
+    volume_size = 8
+    tags = {
+      Name     = "sachith_tf_test_instance"
+      Duration = "Temporary"
+      User     = "Sachith"
+    }
+  }
+}

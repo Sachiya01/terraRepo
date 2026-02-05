@@ -28,7 +28,7 @@ variable "pvt_sub_cidr" {
 variable "pvt_instance_type" {
   description = "pvt instance type"
   type        = string
-  default     = "t3.micro"
+  default     = "t3.medium"
 }
 
 variable "pub_instance_type" {
